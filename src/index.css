@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.links{
+  padding: 16px;
+  text-decoration: none;
+}
+
+.navBar{
+  display: flex;
+  justify-content: center;
+}
+.movies-list{
+ display: grid;
+ grid-template-columns: repeat(4,425px);
+ place-items: center;
+}
