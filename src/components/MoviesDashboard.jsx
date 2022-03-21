@@ -28,7 +28,9 @@ const handleClick = (id) => {
     <>
       <h2>Movies</h2>
       <select  onChange={handleFilter}>
-        {/* map through the filter  */}
+        {genres.map((ele) => {
+          return <option>{ele}</option>
+        })}
       </select>
       <div className = "movies-list">
        {state.isLoading ? <h1>Loading..</h1> : state.data.map((e) => {
