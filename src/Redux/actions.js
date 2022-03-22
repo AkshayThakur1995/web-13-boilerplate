@@ -19,4 +19,14 @@ export const getMovieData = () => {
 
 // action object for filter  feature
 
-const filterByGenre = () => ({});
+export const filterByGenre = () => {
+    return async(dispath, getState) => {
+        dispath(getMovieReq())
+        try {
+            const response = await axios.get("https://movie-fake-server.herokuapp.com/data")
+            dispath({type:GET_MOVIE_SUCCESS, payload: response.data})
+        } catch (error) {
+            dispath({type:GET_MOVIES_FAIL, error})
+        }
+    }
+};
