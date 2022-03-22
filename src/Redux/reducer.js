@@ -1,4 +1,4 @@
-import { GET_MOVIES_FAIL, GET_MOVIES_REQ, GET_MOVIE_SUCCESS } from "./actionTypes"
+import { GET_FILTER_MOVIE, GET_MOVIES_FAIL, GET_MOVIES_REQ, GET_MOVIE_SUCCESS } from "./actionTypes"
 
 
 const initState = {
@@ -28,6 +28,12 @@ export const Reducer = (state=initState, action)=>{
                 ...state,
                 isLoading:false,
                 error:action.error
+            }
+        case GET_FILTER_MOVIE:
+            return {
+                ...state,
+                isLoading:false,
+                filterData:action.payload
             }
         default:
             return state

@@ -15,17 +15,17 @@ export const MoviesDashboard = () => {
     dispatch(getMovieData())
   }, [dispatch]);
   const state = useSelector((state) => state)
+  const filter = useSelector((state) => state.filterData)
  const [select, setSelect] = useState("")
 //    filter by genre 
 const handleFilter = (e)=>{
     // dispach filterby genre action to the store
-    dispatch(filterByGenre())
-    
     setSelect(e.target.value)
+    dispatch(filterByGenre(select))
   }
   
-const filter = state.data.filter((gen) => gen.genre.includes(select))
-console.log(filter)
+// const filter = state.data.filter((gen) => gen.genre.includes(select))
+// console.log(filter)
 const handleClick = (id) => {
   navigate(`/movies/${id}`)
 }
